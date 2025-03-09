@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 
 W = np.array([f'a{i+1}' for i in range(8)])
-u1 = np.array([0.5, 0.3, 0, 0.8, 0.9, 1, 0.4, 0.2])
-u2 = np.array([0.5, 1, 1, 0.8, 0.4, 0, 0, 0.5])
+u1 = np.array([1, 1, 0.6, 0, 0.7, 0.4, 0.1, 0])
+u2 = np.array([0.6, 0.9, 0.5, 0.3, 0, 0.5, 1, 0.7])
 n = len(u1)
 
 plt.figure(figsize=(10, 5))
@@ -17,7 +17,6 @@ plt.legend()
 plt.grid()
 plt.show()
 
-# Task 2: Compute and Plot Complement, Intersection, Union, and Difference
 X_complement = 1 - u1
 Y_complement = 1 - u2
 X_intersection_Y = np.minimum(u1, u2)
@@ -74,7 +73,7 @@ v_Y = (2 / n) * hamming_distance(u2, Y_complement)
 eta_X = (2 / np.sqrt(n)) * euclidean_distance(u1, X_complement)
 eta_Y = (2 / np.sqrt(n)) * euclidean_distance(u2, Y_complement)
 
-print(f"Індекс нечіткості за Хеммінгом для X: {v_X:.5f}")
-print(f"Індекс нечіткості за Хеммінгом для Y: {v_Y:.5f}")
-print(f"Індекс нечіткості за Евклідом для X: {eta_X:.5f}")
-print(f"Індекс нечіткості за Евклідом для Y: {eta_Y:.5f}")
+print(f"Fuzzy Hamming for X: {v_X:.5f}")
+print(f"Fuzzy Hamming for Y: {v_Y:.5f}")
+print(f"Fuzzy Euclidean for X: {eta_X:.5f}")
+print(f"Fuzzy Euclidean for Y: {eta_Y:.5f}")
